@@ -29,7 +29,9 @@ function testSpeech() {
     recognition.stop();
     button.disabled = false;
     button.textContent = 'Start new test';
+	var recognition = new SpeechRecognition();
 	recognition.start();
+	
   }
 
   recognition.onerror = function(event) {
