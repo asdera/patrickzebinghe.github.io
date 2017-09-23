@@ -11,8 +11,8 @@ function testSpeech() {
   var grammar = '#JSGF V1.0; grammar phrase;';
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
-  speechRecognition.continuous = true
-  SpeechRecognitionList.addFromString(grammar, 1);
+  SpeechRecognition.continuous = true
+  speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
   recognition.lang = 'en-US';
   recognition.interimResults = false;
