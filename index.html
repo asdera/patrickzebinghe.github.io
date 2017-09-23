@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Hello...</title>
+<style type="text/css">
+body, html {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  background-color: teal;
+}
+
+body {
+  height: inherit;
+  overflow: hidden;
+}
+
+h1, p {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+div p {
+  padding: 20px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+div {
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+  font-size: 1.1rem;
+  width: 170px;
+  line-height: 2;
+  margin-top: 30px;
+}
+
+@media all and (max-height: 410px) {
+  div {
+    position: static;
+  }
+}
+
+.phrase {
+  font-weight: bold;
+}
+
+.output {
+  font-style: italic;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+	<h1>Phrase matcher</h1>
+    <p>Press the button then say the phrase to test the recognition.</p>
+
+    <button>Start new test</button>
+
+    <div>
+        <p class="phrase">Phrase...</p>
+        <p class="result">Right or wrong?</p>
+        <p class="output">...diagnostic messages</p>
+    </div>
+	
+		<select id='options'>
+	<select>
+	
+	<button class='speed' value=0.65>Slow</start>
+	<button class='speed' value=1>Medium</start>
+	<button class='speed' value=1.35>fast</start>
+<script type="text/javascript" src="speak.js"></script>
+</body>
+</html>
