@@ -43,7 +43,7 @@ button.addEventListener('click', testSpeech);
 
 function process(text) {
   console.log(text);
-  var replies = 'fenchi is stupid';
+  var replies = reply(text)
   speak(replies[Math.random() * replies.length]);
   
 }
