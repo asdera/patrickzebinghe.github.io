@@ -48,7 +48,7 @@ function process(text) {
   console.log(replies[Math.random() * replies.length])
   console.log(Math.floor(Math.random() * replies.length))
   speak(replies[Math.floor(Math.random() * replies.length)]);
-  
+
 }
 
 
@@ -101,7 +101,7 @@ $(document).ready(function() {
 function reply(said) {
   switch(said.toLowerCase()){
 
-
+	
     case "hi":
 	case "hello":
       possibleReplies = ["hi what can I help you with?", 'hi how are you doing today'];
@@ -114,6 +114,9 @@ function reply(said) {
       break;
 
     default:
-      possibleReplies = ["sorry I don't understand, could you repeat that", "sorry could you say something else"]
+	if (said.indexOf('open') != -1) {
+		window.open('file:///C:/googlechrome.bat')
+	}
+    possibleReplies = ["sorry I don't understand, could you repeat that", "sorry could you say something else"]
   }
 }
