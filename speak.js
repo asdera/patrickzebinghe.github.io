@@ -12,7 +12,6 @@ function testSpeech() {
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
   speechRecognitionList.addFromString(grammar, 1);
-  SpeechRecognition.continuous = true
   recognition.grammars = speechRecognitionList;
   recognition.lang = 'en-US';
   recognition.interimResults = false;
@@ -23,14 +22,14 @@ function testSpeech() {
   recognition.onresult = function(event) {
     var speechResult = event.results[0][0].transcript;
     process(speechResult);
-	recognition.start();
+
   }
 
   recognition.onspeechend = function() {
-   
+    recognition.stop();
     button.disabled = false;
     button.textContent = 'Start new test';
-	
+	recognition.start();
   }
 
   recognition.onerror = function(event) {
