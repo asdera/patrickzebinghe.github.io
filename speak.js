@@ -12,7 +12,7 @@ function testSpeech() {
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
   speechRecognition.continuous = true
-  speechRecognitionList.addFromString(grammar, 1);
+  SpeechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
   recognition.lang = 'en-US';
   recognition.interimResults = false;
