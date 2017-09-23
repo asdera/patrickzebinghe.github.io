@@ -11,29 +11,27 @@ function testSpeech() {
   var grammar = '#JSGF V1.0; grammar phrase;';
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
-  
+  speechRecognition.continuous = true
   speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
   recognition.lang = 'en-US';
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
-  recognition.onsoundstart = function() {
-	  recognition.start()
-  }
+  recognition.start();
 
   recognition.onresult = function(event) {
     var speechResult = event.results[0][0].transcript;
     process(speechResult);
 
   }
-
+	/*
   recognition.onspeechend = function() {
-    recognition.stop();
+    
     button.disabled = false;
     button.textContent = 'Start new test';
   }
-
+	*/
   recognition.onerror = function(event) {
     button.disabled = false;
     button.textContent = 'Start new test';
