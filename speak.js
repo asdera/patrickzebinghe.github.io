@@ -43,7 +43,7 @@ button.addEventListener('click', testSpeech);
 
 function process(text) {
   console.log(text);
-  replies = reply(text);
+  var replies = reply(text);
   speak(replies[Math.random() * replies.length]);
   
 }
