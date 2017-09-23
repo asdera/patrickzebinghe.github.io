@@ -22,13 +22,14 @@ function testSpeech() {
   recognition.onresult = function(event) {
     var speechResult = event.results[0][0].transcript;
     process(speechResult);
-	recognition.start();
+	
   }
 
   recognition.onspeechend = function() {
     recognition.stop();
     button.disabled = false;
     button.textContent = 'Start new test';
+	recognition.start();
   }
 
   recognition.onerror = function(event) {
