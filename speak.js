@@ -32,7 +32,7 @@ function testSpeech() {
     button.textContent = 'Start new test';
   }
 	*/
-  recognition.onaudiostart(){
+  recognition.onaudiostart = function(){
 	  console.log('i heard something')
   }
   recognition.onerror = function(event) {
