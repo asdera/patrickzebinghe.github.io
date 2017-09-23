@@ -46,7 +46,8 @@ function process(text) {
   reply(text)
   replies = possibleReplies
   console.log(replies[Math.random() * replies.length])
-  speak(replies[Math.random() * replies.length]);
+  console.log(Math.floor(Math.random() * replies.length))
+  speak(replies[Math.floor(Math.random() * replies.length)]);
   
 }
 
