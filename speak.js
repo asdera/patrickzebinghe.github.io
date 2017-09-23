@@ -29,9 +29,6 @@ function testSpeech() {
     recognition.stop();
     button.disabled = false;
     button.textContent = 'Start new test';
-	var recognition = new SpeechRecognition();
-	recognition.start();
-	
   }
 
   recognition.onerror = function(event) {
@@ -45,9 +42,9 @@ function testSpeech() {
 button.addEventListener('click', testSpeech);
 
 function process(text) {
-  console.log("he said " + text)
-  $("body").append("he said " + text)
-  speak('he said ' + text)
+  console.log(text)
+  evaluateText(text)
+  
 }
 
 
